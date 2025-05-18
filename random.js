@@ -66,23 +66,20 @@ function addToHistory(newColor) {
   historyContainer.style.fontWeight = 'bold';
   history.forEach(colorInList => {
 
-    const btn = document.createElement("p");
+    const p = document.createElement("p");
     btn.textContent = colorInList;
 
-    btn.style.backgroundColor = colorInList;
-    btn.style.color = "black";
-    btn.style.cursor ="pointer";
-    btn.style.margin = "5px";
-    btn.style.padding = "5px";
-    btn.style.display = "inline-block";
-
-    btn.classList.add("historyButton");
-
+    p.style.backgroundColor = colorInList;
+    p.style.color = "black";
+    p.style.cursor ="pointer";
+    p.style.margin = "5px";
+    p.style.padding = "5px";
+    p.style.display = "inline-block";
     // btn.addEventListener("click", () => {
     //   updateColorCode(colorInList);
     //   addToHistory(colorInList);
     // });
 
-    historyContainer.appendChild(btn);
+    historyContainer.appendChild(p);
   });
 }
