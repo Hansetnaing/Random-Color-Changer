@@ -23,12 +23,8 @@ function changeColor(){
     document.body.style.transition = "all .5s";
 
     addToHistory(color);
-    // updateColorCode(color);
+    updateColorCode(color);
 }
-
-document.getElementById('store').addEventListener('click',function(){
-    document.body.style.backgroundColor = document.getElementById('store').textContent;
-});
 
 // End Change Color
 
@@ -66,7 +62,7 @@ function addToHistory(newColor) {
   historyContainer.style.fontWeight = 'bold';
   history.forEach(colorInList => {
 
-    const btn = document.createElement("p");
+    const btn = document.createElement("button");
     btn.textContent = colorInList;
 
     btn.style.backgroundColor = colorInList;
@@ -74,11 +70,12 @@ function addToHistory(newColor) {
     btn.style.cursor ="pointer";
     btn.style.margin = "5px";
     btn.style.padding = "5px";
-    btn.style.display = "inline-block";
-    // btn.addEventListener("click", () => {
-    //   updateColorCode(colorInList);
-    //   addToHistory(colorInList);
-    // });
+    btn.classList.add("updateColor");
+    
+    btn.addEventListener("click", () => {
+      updateColorCode(colorInList);
+      // addToHistory(colorInList);
+    });
 
     historyContainer.appendChild(btn);
   });

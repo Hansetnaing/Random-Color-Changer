@@ -74,3 +74,8 @@ button:hover{
     margin-top: 20px;
     font-size: 1rem;
 }
+
+.updateColor{
+    width: auto;
+    display: inline;
+}
