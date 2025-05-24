@@ -78,8 +78,17 @@ button:hover{
 .updateColor{
     display: inline-block;
     color: black;
+    font-weight: bold;
+
     cursor: pointer;
+
     margin: 5px;
-    padding: 5px;
+    padding: 5px 10px;
+    
     border-radius: 8px;
+}
+
+.updateColor:hover{
+    transform: scale(1.05);
+    transition: all ease-in-out .3s;
 }
