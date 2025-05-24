@@ -1,11 +1,11 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     height: 100vh;
     background-color: #fff;
 
@@ -17,7 +17,7 @@ body{
     flex-direction: column;
 }
 
-.container{
+.container {
     width: 100%;
     max-width: 400px;
 
@@ -30,27 +30,27 @@ body{
     border-radius: 12px;
 }
 
-h1{
+h1 {
     color: #333;
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
-#colorCode{
+#colorCode {
     min-width: 100px;
     background: rgba(0, 0, 0, .1);
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 10px;
     display: inline-block;
-    
+
     margin: 15px 0;
     padding: 10px;
     cursor: pointer;
 
 }
 
-button{
+button {
     width: 100%;
     max-width: 250px;
     background-color: #333;
@@ -65,17 +65,17 @@ button{
     transition: all .3s;
 }
 
-button:hover{
+button:hover {
     background-color: #555;
     transform: scale(1.05);
 }
 
-#history{
+#history {
     margin-top: 20px;
     font-size: 1rem;
 }
 
-.updateColor{
+.updateColor {
     display: inline-block;
     color: black;
     font-weight: bold;
@@ -84,11 +84,11 @@ button:hover{
 
     margin: 5px;
     padding: 5px 10px;
-    
+
     border-radius: 8px;
 }
 
-.updateColor:hover{
+.updateColor:hover {
     transform: scale(1.05);
     transition: all ease-in-out .3s;
 }
