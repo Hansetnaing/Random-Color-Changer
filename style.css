@@ -76,6 +76,10 @@ button:hover{
 }
 
 .updateColor{
-    width: auto;
-    display: inline;
+    display: inline-block;
+    color: black;
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 8px;
 }

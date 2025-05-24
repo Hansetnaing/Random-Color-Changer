@@ -1,4 +1,5 @@
 let isRGB = false;
+let history = [];
 
 // Start Change Color
 
@@ -38,45 +39,49 @@ function toggleMode(){
 
 // End Toggle Color Mode 
 
-// CopyColor 
+// Start History Function
 
-document.getElementById('colorCode').addEventListener('click',function(){
-    let color = document.getElementById('colorCode').textContent;
-    navigator.clipboard.writeText(color).then(() => alert('Copied :'+ color));
-});
 
-// History 
-let history = [];
-const maxHistorySize = 5;
+function addToHistory(color) {
+  
 
-const historyContainer = document.getElementById("history"); 
-
-function addToHistory(newColor) {
-  history.unshift(newColor);
-
-  if (history.length > maxHistorySize) {
-    history.pop();
+  if (history.length >= 5) {
+    history.pop(color);
   }
 
-  historyContainer.innerHTML = "History:";
-  historyContainer.style.fontWeight = 'bold';
-  history.forEach(colorInList => {
+  history.unshift(color);
 
-    const btn = document.createElement("button");
-    btn.textContent = colorInList;
+  let historyDiv = document.getElementById("history"); 
+  historyDiv.innerHTML = '<strong>History:</strong>';
+  history.forEach(x => {
 
-    btn.style.backgroundColor = colorInList;
-    btn.style.color = "black";
-    btn.style.cursor ="pointer";
-    btn.style.margin = "5px";
-    btn.style.padding = "5px";
-    btn.classList.add("updateColor");
+    let span = document.createElement("span");
     
-    btn.addEventListener("click", () => {
-      updateColorCode(colorInList);
-      // addToHistory(colorInList);
-    });
+    span.textContent = x;
+    span.style.backgroundColor = x;
+    span.classList.add("updateColor");
+    span.onclick = () => applyColor(x);
 
-    historyContainer.appendChild(btn);
+    historyDiv.appendChild(span);
   });
 }
+
+// End History Function
+
+// Start Apply Color 
+
+function applyColor(color){
+  document.body.style.backgroundColor = color;
+  document.getElementById('colorCode').textContent = color;
+}
+
+// End Apply Color
+
+// Start Copy Color
+
+function copyColor(){
+    let color = document.getElementById('colorCode').textContent;
+    navigator.clipboard.writeText(color).then(() => alert('Copied :'+ color));
+}
+
+// End Copy Color
