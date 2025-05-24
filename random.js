@@ -21,7 +21,7 @@ function changeColor(){
     document.body.style.backgroundColor = color;
     // document.getElementById('colorCode').style.color = color;
     document.getElementById('colorCode').textContent = color;
-    document.body.style.transition = "all .5s";
+    document.body.style.transition = "all ease-in-out .5s";
 
     addToHistory(color);
     updateColorCode(color);
