@@ -1,24 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Color Changer</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Random Color Changer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <main class="container" id="app">
+    <header class="header">
+      <h1>Random Color Changer</h1>
+      <p class="subtitle">Generate, copy and remember recent colors</p>
+    </header>
 
-    <div class="container">
-        <h1>Random Color Changer</h1>
-        <p id="colorCode" onclick="copyColor()">#FFFFFF</p>
-        <button onclick="changeColor()">Change Color</button>
-        <button onclick="toggleMode()">Switch to RGB</button>
-        <div id="history"><strong>History:</strong></div>
-    </div>
+    <section class="panel">
+      <div id="swatch" class="swatch" aria-hidden="true"></div>
 
-    <script src="./random.js" type="text/javascript"></script>
+      <div class="controls">
+        <div id="colorCode" class="color-code" aria-live="polite">#FFFFFF</div>
+
+        <div class="buttons">
+          <button id="changeBtn" class="btn primary" title="Generate a new color (Space)">Change Color</button>
+          <button id="toggleBtn" class="btn" title="Toggle RGB / HEX">Switch to RGB</button>
+          <button id="copyBtn" class="btn" title="Copy current color (C)">Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="history" id="history" aria-label="Color history">
+      <h2>Color History</h2>
+      <ul id="historyList"></ul>
+    </section>
+
+    <footer class="footer">
+      <small>Tip: Press Space to randomize, C to copy. History persists.</small>
+    </footer>
+  </main>
+
+  <script src="random.js" defer></script>
 </body>
 
 </html>
